@@ -1,3 +1,7 @@
+-- This is meant to be a [hopefully] private script.
+-- I am the only creator of this script, if you see it anywhere else on the net report this to me.
+-- Do not even THINK about leaking, skidding or claiming you made this script. It is public for your safety.
+
 prefix = game.Players.LocalPlayer.PlayerGui.HDAdminGUIs.MainFrame.Pages.Settings.Custom["AE1 Prefix"].SettingValue.TextBox.Text
 chatfunc = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
 local VRGui = Instance.new("ScreenGui")
