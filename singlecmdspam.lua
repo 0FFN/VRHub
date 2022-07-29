@@ -76,7 +76,7 @@ poo.MouseButton1Down:Connect(function()
     else
         CurrentCommand = "re "
     end
-    game.Players:Chat(prefix..CurrentCommand..Player.Text)
+    game.ReplicatedStorage.HDAdminClient.Signals.RequestCommand:InvokeServer(prefix..CurrentCommand..Player.Text)
     chatfunc:FireServer(prefix..CurrentCommand..Player.Text, "All")
 end)
 
@@ -97,7 +97,7 @@ give.MouseButton1Down:Connect(function()
     if Player.Text == "" then
         Player.PlaceholderText = "Enter player name!"
     return end
-    game.Players:Chat(prefix.."give "..Player.Text.." all")
+    game.ReplicatedStorage.HDAdminClient.Signals.RequestCommand:InvokeServer(prefix.."give "..Player.Text.." all")
     chatfunc:FireServer(prefix.."give "..Player.Text.." all", "All")
 end)
 
