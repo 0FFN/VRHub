@@ -1,4 +1,4 @@
--- This is meant to be a [hopefully] private script.
+-- This is meant to be stop you from being banned while spamming.
 -- I am the only creator of this script, if you see it anywhere else on the net report this to me.
 -- Do not even THINK about leaking, skidding or claiming you made this script. It is public for your safety.
 
@@ -58,7 +58,6 @@ Player.ClearTextOnFocus = false
 
 UICorner_2.Parent = Player
 
-CurrentCommand = "re "
 poo.Name = "poo"
 poo.Parent = SingleCmdSpam
 poo.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
@@ -71,12 +70,10 @@ poo.TextScaled = true
 poo.TextSize = 14.000
 poo.TextWrapped = true
 poo.MouseButton1Down:Connect(function()
-    if CurrentCommand == "re " then
-        CurrentCommand = "poo "
-    else
-        CurrentCommand = "re "
-    end
-    game.ReplicatedStorage.HDAdminClient.Signals.RequestCommand:InvokeServer(prefix..CurrentCommand..Player.Text)
+    if Player.Text == "" then
+        Player.PlaceholderText = "Enter player name!"
+    return end
+    game.ReplicatedStorage.HDAdminClient.Signals.RequestCommand:InvokeServer(prefix.."POO "..Player.Text.." "..prefix.."REFRESH "..Player.Text)
     chatfunc:FireServer(prefix..CurrentCommand..Player.Text, "All")
 end)
 
